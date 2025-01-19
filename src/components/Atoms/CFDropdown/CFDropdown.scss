@@ -1,0 +1,45 @@
+@import '@/styles/global.scss';
+
+.cf-dropdown {
+  position: relative;
+  width: 100%;
+
+  .cf-dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid $color-neutral-300;
+    border-radius: 4px;
+    cursor: pointer;
+
+    .cf-dropdown-icon {
+      transition: transform 0.3s ease;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .cf-dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: $color-secondary;
+    border: 1px solid $color-neutral-300;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    z-index: 10;
+
+    .cf-dropdown-option {
+      padding: 0.5rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-neutral-400;
+      }
+    }
+  }
+}

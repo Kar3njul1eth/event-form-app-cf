@@ -1,0 +1,17 @@
+@import '@/styles/global.scss';
+
+.cf-icon {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &.cf-icon-calendar {
+    background-image: url('/calendar-icon.svg');
+  }
+
+  &.cf-icon-trash {
+    background-image: url('/trash-icon.svg');
+  }
+}

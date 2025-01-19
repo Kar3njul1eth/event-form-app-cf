@@ -1,0 +1,38 @@
+@import '@/styles/global.scss';
+
+.cf-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  input[type="checkbox"] {
+    appearance: none;
+    height: 1.25rem;
+    border: 1px solid $color-neutral-300;
+    border-radius: 4px;
+    background-color: $color-secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $color-primary-light;
+      border-color: $color-primary;
+
+      &::after {
+        content: '';
+        width: 0.75rem;
+        height: 0.75rem;
+        background-image: url('/checkmark.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  label {
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+}

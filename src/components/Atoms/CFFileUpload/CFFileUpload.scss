@@ -1,0 +1,13 @@
+@import '@/styles/global.scss';
+
+.cf-file-upload {
+  .cf-file-upload-label {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: $color-primary;
+    color: $color-secondary;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+}

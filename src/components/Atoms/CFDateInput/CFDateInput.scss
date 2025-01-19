@@ -1,0 +1,66 @@
+@import '@/styles/global.scss';
+
+.cf-date-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .cf-date-input-wrapper {
+    display: flex;
+    align-items: center;
+
+    input {
+      flex-grow: 1;
+      padding: 0.5rem;
+      border: 1px solid $color-neutral-300;
+      border-radius: 4px 0 0 4px;
+      font-size: 0.875rem;
+
+      &:focus {
+        outline: none;
+        border-color: $color-primary;
+      }
+
+      &:disabled {
+        background-color: $color-neutral-400;
+        cursor: not-allowed;
+      }
+    }
+
+    .cf-date-picker-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      height: 100%;
+      border: 1px solid $color-neutral-300;
+      border-radius: 0 4px 4px 0;
+      background-color: $color-neutral-400;
+      cursor: pointer;
+
+      .cf-date-picker-icon {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        background-image: url('/calendar-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .cf-date-picker {
+    position: absolute;
+    z-index: 100;
+  }
+
+  .error-message {
+    color: $color-secondary-dark;
+    font-size: 0.75rem;
+  }
+}

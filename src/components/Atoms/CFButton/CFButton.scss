@@ -1,0 +1,42 @@
+@import '@/styles/global.scss';
+
+.cf-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.3s ease;
+
+  &.primary {
+    background-color: $color-primary;
+    color: $color-secondary;
+
+    &:hover {
+      background-color: darken($color-primary, 10%);
+    }
+  }
+
+  &.secondary {
+    background-color: $color-neutral-200;
+    color: $color-secondary;
+
+    &:hover {
+      background-color: darken($color-neutral-200, 10%);
+    }
+  }
+
+  &.danger {
+    background-color: $color-secondary-dark;
+    color: $color-secondary;
+
+    &:hover {
+      background-color: darken($color-secondary-dark, 10%);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
