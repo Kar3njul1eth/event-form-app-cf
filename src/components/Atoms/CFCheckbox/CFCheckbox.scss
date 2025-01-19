@@ -5,12 +5,13 @@
   align-items: center;
   gap: 0.5rem;
 
-  input[type="checkbox"] {
+  .cf-checkbox-input {
     appearance: none;
+    width: 1.25rem;
     height: 1.25rem;
-    border: 1px solid $color-neutral-300;
+    border: 1px solid $color-border;
     border-radius: 4px;
-    background-color: $color-secondary;
+    background-color: $color-background;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,15 +25,16 @@
         content: '';
         width: 0.75rem;
         height: 0.75rem;
-        background-image: url('/checkmark.svg');
+        background-image: url('@/assets/Vector.svg');
         background-size: contain;
         background-repeat: no-repeat;
       }
     }
   }
 
-  label {
+  .cf-checkbox-label {
     font-size: 0.875rem;
     cursor: pointer;
+    color: $color-text;
   }
 }

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/vue3';
+import type { Meta, Story } from '@storybook/vue3';
 import CFCheckbox from '@/components/Atoms/CFCheckbox/CFCheckbox.vue';
 
 export default {

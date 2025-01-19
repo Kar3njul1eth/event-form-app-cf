@@ -5,8 +5,9 @@
       type="checkbox"
       :checked="modelValue"
       @change="$emit('update:modelValue', $event.target.checked)"
+      class="cf-checkbox-input"
     />
-    <label :for="id">
+    <label :for="id" class="cf-checkbox-label">
       <slot></slot>
     </label>
   </div>
