@@ -2,7 +2,9 @@
   <div class="cf-dropdown">
     <div class="cf-dropdown-header" @click="isOpen = !isOpen">
       <span>{{ selectedOption ? selectedOption.label : placeholder }}</span>
-      <i class="cf-dropdown-icon" :class="{ 'open': isOpen }"></i>
+      <div class="cf-dropdown-icons">
+        <slot name="right-icon"></slot>
+      </div>
     </div>
     <div v-if="isOpen" class="cf-dropdown-options">
       <div

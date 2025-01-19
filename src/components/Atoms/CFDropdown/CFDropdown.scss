@@ -8,10 +8,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
-    border: 1px solid $color-neutral-300;
-    border-radius: 4px;
+    padding: 0.6rem;
+    border: 1px solid $color-primary-dark;
+    border-radius: 8px;
     cursor: pointer;
+    background-color: $color-primary-dark;
+    min-width: 450px;
 
     .cf-dropdown-icon {
       transition: transform 0.3s ease;
@@ -27,7 +29,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: $color-secondary;
+    background-color: $color-background-dark;
     border: 1px solid $color-neutral-300;
     border-top: none;
     border-radius: 0 0 4px 4px;
@@ -38,7 +40,7 @@
       cursor: pointer;
 
       &:hover {
-        background-color: $color-neutral-400;
+        background-color: $color-neutral-200;
       }
     }
   }

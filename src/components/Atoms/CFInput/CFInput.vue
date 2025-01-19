@@ -1,6 +1,6 @@
 <template>
   <div class="cf-input-wrapper">
-    <label v-if="label" :for="id">{{ label }}</label>
+    <label v-if="label" :for="id" class="cf-label">{{ label }}</label>
     <input
       :id="id"
       :type="type"
@@ -9,8 +9,9 @@
       :placeholder="placeholder"
       :disabled="disabled"
       :required="required"
+      class="cf-input"
     />
-    <div v-if="error" class="error-message">{{ error }}</div>
+    <div v-if="error" class="cf-error-message">{{ error }}</div>
   </div>
 </template>
 

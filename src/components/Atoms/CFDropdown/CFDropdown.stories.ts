@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/vue3';
+import type { Meta, Story } from '@storybook/vue3';
 import CFDropdown from '@/components/Atoms/CFDropdown/CFDropdown.vue';
 
 export default {

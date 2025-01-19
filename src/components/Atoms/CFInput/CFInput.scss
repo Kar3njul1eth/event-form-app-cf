@@ -5,30 +5,35 @@
   flex-direction: column;
   gap: 0.25rem;
 
-  label {
+  .cf-label {
     font-size: 0.875rem;
     font-weight: 500;
+    color: $color-text;
   }
 
-  input {
-    padding: 0.5rem;
-    border: 1px solid $color-neutral-300;
-    border-radius: 4px;
+  .cf-input {
+    padding: 1rem;
+    border: 1px solid $color-primary-dark;
+    border-radius: 8px;
     font-size: 0.875rem;
+    font-weight: 500;
+    background-color: $color-primary-dark;
+    color: $color-text;
+    min-width: 450px;
 
     &:focus {
       outline: none;
-      border-color: $color-primary;
+      border-color: $color-secondary;
     }
 
     &:disabled {
-      background-color: $color-neutral-400;
+      background-color: $color-border;
       cursor: not-allowed;
     }
   }
 
-  .error-message {
-    color: $color-secondary-dark;
+  .cf-error-message {
+    color: $color-error;
     font-size: 0.75rem;
   }
 }
