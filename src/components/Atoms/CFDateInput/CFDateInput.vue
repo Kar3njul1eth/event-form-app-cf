@@ -1,94 +1,73 @@
 <template>
   <div class="cf-date-input">
-    <label v-if="label" :for="id">{{ label }}</label>
     <div class="cf-date-input-wrapper">
       <input
         :id="id"
-        type="text"
+        type="date"
         :value="formattedDate"
-        @input="handleDateInput"
+        @input="updateDate"
         :placeholder="placeholder"
         :disabled="disabled"
-        :required="required"
+        :min="minDate"
+        :max="maxDate"
+        class="cf-date-field"
       />
-      <button class="cf-date-picker-btn" @click="showDatePicker = !showDatePicker">
-        <i class="cf-date-picker-icon"></i>
-      </button>
+      <svg
+        class="cf-calendar-icon"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+      >
+        <path
+          d="M8 2V6M16 2V6M3 10H21M5 4H19C20.1046 4 21 4.89543 21 6V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V6C3 4.89543 3.89543 4 5 4Z" 
+          stroke="#4FF6B1"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
     </div>
-    <div v-if="showDatePicker" class="cf-date-picker">
-      <cf-date-picker
-        :model-value="date"
-        @update:model-value="updateDate"
-        :disabled-dates="disabledDates"
-      ></cf-date-picker>
-    </div>
-    <div v-if="error" class="error-message">{{ error }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, PropType } from 'vue'
-import CFDatePicker from './CFDatePicker.vue'
+import { computed } from 'vue';
 
-defineProps({
+const props = defineProps({
   id: {
     type: String,
     required: true
-  },
-  label: {
-    type: String,
-    default: ''
   },
   modelValue: {
     type: Date,
     required: true
   },
-  placeholder: {
-    type: String,
-    default: 'mm/dd/yyyy'
-  },
   disabled: {
     type: Boolean,
     default: false
   },
-  required: {
-    type: Boolean,
-    default: false
-  },
-  error: {
+  minDate: {
     type: String,
-    default: ''
+    default: undefined
   },
-  disabledDates: {
-    type: Array as PropType<Date[]>,
-    default: () => []
+  maxDate: {
+    type: String,
+    default: undefined
   }
-})
+});
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue']);
 
-const showDatePicker = ref(false)
-const date = computed({
-  get: () => props.modelValue,
-  set: (value) => emit('update:modelValue', value)
-})
+const formattedDate = computed(() => {
+  if (!props.modelValue) return '';
+  return props.modelValue.toISOString().split('T')[0];
+});
 
-const formattedDate = computed(() =>
-  date.value ? date.value.toLocaleDateString() : ''
-)
-
-const handleDateInput = (event: Event) => {
-  const inputValue = (event.target as HTMLInputElement).value
-  const dateValue = new Date(inputValue)
-  if (!isNaN(dateValue.getTime())) {
-    emit('update:modelValue', dateValue)
-  }
-}
-
-const updateDate = (newDate: Date) => {
-  emit('update:modelValue', newDate)
-  showDatePicker.value = false
-}
+const updateDate = (event: Event) => {
+  const newDate = new Date((event.target as HTMLInputElement).value);
+  emit('update:modelValue', newDate);
+};
 </script>
 
 <style src="./CFDateInput.scss" lang="scss" scoped> </style>

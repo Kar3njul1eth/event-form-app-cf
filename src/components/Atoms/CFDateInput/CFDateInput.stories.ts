@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/vue3';
+import type { Meta, Story } from '@storybook/vue3';
 import CFDateInput from '@/components/Atoms/CFDateInput/CFDateInput.vue';
 
 export default {

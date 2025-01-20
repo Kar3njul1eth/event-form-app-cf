@@ -1,6 +1,6 @@
 @import '@/styles/global.scss';
 
-.cf-btn {
+.cf-button {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -11,6 +11,8 @@
   &.primary {
     background-color: $color-primary;
     color: $color-secondary;
+    height: 48px;
+    width: 120px;
 
     &:hover {
       background-color: darken($color-primary, 10%);
@@ -18,25 +20,26 @@
   }
 
   &.secondary {
-    background-color: $color-neutral-200;
+    background-color: $color-border;
     color: $color-secondary;
 
     &:hover {
-      background-color: darken($color-neutral-200, 10%);
+      background-color: darken($color-border, 10%);
     }
   }
 
   &.danger {
-    background-color: $color-secondary-dark;
+    background-color: $color-error;
     color: $color-secondary;
 
     &:hover {
-      background-color: darken($color-secondary-dark, 10%);
+      background-color: darken($color-error, 10%);
     }
   }
 
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    color: $color-neutral-300;
   }
 }

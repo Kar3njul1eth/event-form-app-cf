@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/vue3';
+import type { Meta, Story } from '@storybook/vue3';
 import CFButton from '@/components/Atoms/CFButton/CFButton.vue';
 
 export default {

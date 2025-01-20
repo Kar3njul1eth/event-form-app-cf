@@ -1,5 +1,5 @@
 <template>
-  <button :class="['cf-btn', variant]" :disabled="disabled">
+  <button :class="['cf-button', variant]" :disabled="disabled">
     <slot></slot>
   </button>
 </template>

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/vue3';
+import type { Meta, Story } from '@storybook/vue3';
 import CFFileUpload from '@/components/Atoms/CFFileUpload/CFFileUpload.vue';
 
 export default {
