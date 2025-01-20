@@ -1,0 +1,26 @@
+@import '@/styles/global.scss';
+
+.cf-event-type-dropdown {
+  width: 100%;
+}
+.cf-dropdown {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-icons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &-arrow {
+    transition: transform 0.3s ease;
+
+    &.open {
+      transform: rotate(180deg);
+    }
+  }
+}
